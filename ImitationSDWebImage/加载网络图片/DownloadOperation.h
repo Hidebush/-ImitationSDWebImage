@@ -11,6 +11,6 @@
 
 @interface DownloadOperation : NSOperation
 
-+ (instancetype)downloadOperationWithURLString: (NSString *)string finished: (void(^)(UIImage *))finished;
++ (instancetype)downloadOperationWithURLString: (NSString *)string finished: (void(^)(UIImage *image))finished;
 
 @end

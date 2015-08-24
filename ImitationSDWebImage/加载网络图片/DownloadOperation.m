@@ -19,15 +19,23 @@
 
 - (void)main {
     @autoreleasepool {
+        NSAssert(self.finishedBlock != nil, @"没有传递finishedBlock回调");
         NSURL *url = [NSURL URLWithString:self.URLString];
         NSData *data = [NSData dataWithContentsOfURL:url];
         if (data != nil) {
             [data writeToFile:self.URLString.appCacheDir atomically:YES];
         }
+        
+        /// 取消操作
+        if (self.isCancelled) {
+            return;
+        }
+        
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.finishedBlock([UIImage imageWithData:data]);
         }];
-    }    
+ 
+    }
     
 }
 

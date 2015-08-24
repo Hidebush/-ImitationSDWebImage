@@ -10,6 +10,7 @@
 #import "AppInfo.h"
 #import "AppCell.h"
 #import "NSString+path.h"
+#import "DownloadOperation.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *apps;
@@ -61,26 +62,34 @@
         return;
     }
     __weak typeof(self) weakSelf = self;
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"图片正在下载中...");
-        NSURL *url = [NSURL URLWithString:app.icon];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        if (data) {
-            
-            [data writeToFile:app.icon.appCacheDir atomically:YES];
+//    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"图片正在下载中...");
+//        NSURL *url = [NSURL URLWithString:app.icon];
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        if (data) {
+//            
+//            [data writeToFile:app.icon.appCacheDir atomically:YES];
+//        }
+//        UIImage *image = [UIImage imageWithData:data];
+    
+    DownloadOperation *op = [DownloadOperation downloadOperationWithURLString:app.icon finished:^(UIImage *image) {
+        [weakSelf.operationcache removeObjectForKey:app.icon];
+        if (image != nil) {
+            [self.imagecache setObject:image forKey:app.icon];
+            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         }
-        UIImage *image = [UIImage imageWithData:data];
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //                cell.iconView.image = image;
-            [weakSelf.operationcache removeObjectForKey:app.icon];
-//            app.image = image;
-            if (image != nil) {
-                [self.imagecache setObject:image forKey:app.icon];
-                [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            }
-        }];
-        
     }];
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            //                cell.iconView.image = image;
+//            [weakSelf.operationcache removeObjectForKey:app.icon];
+////            app.image = image;
+//            if (image != nil) {
+//                [self.imagecache setObject:image forKey:app.icon];
+//                [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//            }
+//        }];
+    
+//    }];
     
     [self.operationcache setObject:op forKey:app.icon];
     [self.queue addOperation:op];
