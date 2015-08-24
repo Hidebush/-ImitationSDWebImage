@@ -15,7 +15,8 @@
     _app = app;
     self.titleLabel.text = app.name;
     self.downLoadLabel.text = app.download;
-    self.iconView.image = [UIImage imageNamed:@"user_default"];
+//    self.iconView.image = [UIImage imageNamed:@"user_default"];
+    [self.iconView setImageWithUrlString:app.icon];
     
 }
 

@@ -6,10 +6,14 @@
 //  Copyright © 2015年 Theshy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DownloadImageManager : NSObject
 
 + (instancetype)sharedManager;
 
+/// 下载方法
+- (void)downloadOperationWithURLString: (NSString *)string finished: (void(^)(UIImage *image))finished;
+
+- (void)cancelDownloadWithURLString: (NSString *)URLString;
 @end

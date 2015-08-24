@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppInfo.h"
+#import "WebImageView.h"
 
 @interface AppCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet WebImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *downLoadLabel;
 
