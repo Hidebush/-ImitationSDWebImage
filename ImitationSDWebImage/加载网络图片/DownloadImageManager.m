@@ -8,6 +8,13 @@
 
 #import "DownloadImageManager.h"
 
+@interface DownloadImageManager ()
+/// 操作缓冲池
+@property (nonatomic, strong) NSMutableDictionary *operationcache;
+/// 图片缓冲池
+@property (nonatomic, strong) NSMutableDictionary *imagecache;
+@end
+
 @implementation DownloadImageManager
 + (instancetype)sharedManager {
     static id instance;
@@ -18,6 +25,23 @@
         }
     });
     return instance;
+}
+
+
+#pragma mark 懒加载
+
+- (NSMutableDictionary *)imagecache {
+    if (_imagecache == nil) {
+        _imagecache = [NSMutableDictionary dictionary];
+    }
+    return _imagecache;
+}
+
+- (NSMutableDictionary *)operationcache {
+    if (_operationcache == nil) {
+        _operationcache = [NSMutableDictionary dictionary];
+    }
+    return _operationcache;
 }
 
 @end

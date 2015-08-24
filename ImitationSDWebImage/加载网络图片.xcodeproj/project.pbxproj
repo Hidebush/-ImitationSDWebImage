@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA5A94341B8AD6D70007C277 /* DownloadImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */; };
+		AA5A94381B8AE30A0007C277 /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A94371B8AE30A0007C277 /* DownloadOperation.m */; };
 		AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = AA97980F1B89B2FF00641C7F /* NSString+path.m */; };
 		AAC527871B88C1750010D8B7 /* AppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC527861B88C1750010D8B7 /* AppCell.m */; };
 		AADAFE181B8818A800BB67FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE171B8818A800BB67FD /* main.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		AA5A94321B8AD6D70007C277 /* DownloadImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadImageManager.h; sourceTree = "<group>"; };
 		AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadImageManager.m; sourceTree = "<group>"; };
+		AA5A94361B8AE30A0007C277 /* DownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadOperation.h; sourceTree = "<group>"; };
+		AA5A94371B8AE30A0007C277 /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
 		AA97980E1B89B2FF00641C7F /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		AA97980F1B89B2FF00641C7F /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 		AAC527851B88C1750010D8B7 /* AppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCell.h; sourceTree = "<group>"; };
@@ -53,6 +56,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA5A94351B8AE2C90007C277 /* WebImage */ = {
+			isa = PBXGroup;
+			children = (
+				AA97980E1B89B2FF00641C7F /* NSString+path.h */,
+				AA97980F1B89B2FF00641C7F /* NSString+path.m */,
+				AA5A94361B8AE30A0007C277 /* DownloadOperation.h */,
+				AA5A94371B8AE30A0007C277 /* DownloadOperation.m */,
+				AA5A94321B8AD6D70007C277 /* DownloadImageManager.h */,
+				AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */,
+			);
+			name = WebImage;
+			sourceTree = "<group>";
+		};
 		AADAFE0A1B8818A800BB67FD = {
 			isa = PBXGroup;
 			children = (
@@ -72,14 +88,11 @@
 		AADAFE151B8818A800BB67FD /* 加载网络图片 */ = {
 			isa = PBXGroup;
 			children = (
+				AA5A94351B8AE2C90007C277 /* WebImage */,
 				AADAFE191B8818A800BB67FD /* AppDelegate.h */,
 				AADAFE1A1B8818A800BB67FD /* AppDelegate.m */,
 				AADAFE1C1B8818A800BB67FD /* ViewController.h */,
 				AADAFE1D1B8818A800BB67FD /* ViewController.m */,
-				AA5A94321B8AD6D70007C277 /* DownloadImageManager.h */,
-				AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */,
-				AA97980E1B89B2FF00641C7F /* NSString+path.h */,
-				AA97980F1B89B2FF00641C7F /* NSString+path.m */,
 				AAC527851B88C1750010D8B7 /* AppCell.h */,
 				AAC527861B88C1750010D8B7 /* AppCell.m */,
 				AADAFE2F1B88194200BB67FD /* AppInfo.h */,
@@ -181,6 +194,7 @@
 				AADAFE1B1B8818A800BB67FD /* AppDelegate.m in Sources */,
 				AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */,
 				AADAFE181B8818A800BB67FD /* main.m in Sources */,
+				AA5A94381B8AE30A0007C277 /* DownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
