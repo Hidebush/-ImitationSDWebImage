@@ -27,8 +27,7 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.finishedBlock([UIImage imageWithData:data]);
         }];
-    }
-    
+    }    
     
 }
 
