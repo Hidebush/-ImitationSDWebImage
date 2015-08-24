@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		AA5A94341B8AD6D70007C277 /* DownloadImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */; };
 		AA5A94381B8AE30A0007C277 /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A94371B8AE30A0007C277 /* DownloadOperation.m */; };
-		AA5A943B1B8B368D0007C277 /* WebImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A943A1B8B368D0007C277 /* WebImageView.m */; };
 		AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = AA97980F1B89B2FF00641C7F /* NSString+path.m */; };
 		AAC527871B88C1750010D8B7 /* AppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC527861B88C1750010D8B7 /* AppCell.m */; };
+		AACD6F3A1B8B876C0045DBE7 /* UIImageView+webView.m in Sources */ = {isa = PBXBuildFile; fileRef = AACD6F391B8B876C0045DBE7 /* UIImageView+webView.m */; };
 		AADAFE181B8818A800BB67FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE171B8818A800BB67FD /* main.m */; };
 		AADAFE1B1B8818A800BB67FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE1A1B8818A800BB67FD /* AppDelegate.m */; };
 		AADAFE1E1B8818A800BB67FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AADAFE1D1B8818A800BB67FD /* ViewController.m */; };
@@ -27,12 +27,12 @@
 		AA5A94331B8AD6D70007C277 /* DownloadImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadImageManager.m; sourceTree = "<group>"; };
 		AA5A94361B8AE30A0007C277 /* DownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadOperation.h; sourceTree = "<group>"; };
 		AA5A94371B8AE30A0007C277 /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
-		AA5A94391B8B368D0007C277 /* WebImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageView.h; sourceTree = "<group>"; };
-		AA5A943A1B8B368D0007C277 /* WebImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageView.m; sourceTree = "<group>"; };
 		AA97980E1B89B2FF00641C7F /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		AA97980F1B89B2FF00641C7F /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 		AAC527851B88C1750010D8B7 /* AppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCell.h; sourceTree = "<group>"; };
 		AAC527861B88C1750010D8B7 /* AppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCell.m; sourceTree = "<group>"; };
+		AACD6F381B8B876C0045DBE7 /* UIImageView+webView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+webView.h"; sourceTree = "<group>"; };
+		AACD6F391B8B876C0045DBE7 /* UIImageView+webView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+webView.m"; sourceTree = "<group>"; };
 		AADAFE131B8818A800BB67FD /* 加载网络图片.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "加载网络图片.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADAFE171B8818A800BB67FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AADAFE191B8818A800BB67FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 			children = (
 				AA97980E1B89B2FF00641C7F /* NSString+path.h */,
 				AA97980F1B89B2FF00641C7F /* NSString+path.m */,
-				AA5A94391B8B368D0007C277 /* WebImageView.h */,
-				AA5A943A1B8B368D0007C277 /* WebImageView.m */,
+				AACD6F381B8B876C0045DBE7 /* UIImageView+webView.h */,
+				AACD6F391B8B876C0045DBE7 /* UIImageView+webView.m */,
 				AA5A94361B8AE30A0007C277 /* DownloadOperation.h */,
 				AA5A94371B8AE30A0007C277 /* DownloadOperation.m */,
 				AA5A94321B8AD6D70007C277 /* DownloadImageManager.h */,
@@ -194,9 +194,9 @@
 			files = (
 				AA5A94341B8AD6D70007C277 /* DownloadImageManager.m in Sources */,
 				AADAFE1E1B8818A800BB67FD /* ViewController.m in Sources */,
+				AACD6F3A1B8B876C0045DBE7 /* UIImageView+webView.m in Sources */,
 				AAC527871B88C1750010D8B7 /* AppCell.m in Sources */,
 				AADAFE311B88194200BB67FD /* AppInfo.m in Sources */,
-				AA5A943B1B8B368D0007C277 /* WebImageView.m in Sources */,
 				AADAFE1B1B8818A800BB67FD /* AppDelegate.m in Sources */,
 				AA9798101B89B2FF00641C7F /* NSString+path.m in Sources */,
 				AADAFE181B8818A800BB67FD /* main.m in Sources */,

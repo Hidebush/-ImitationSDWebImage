@@ -7,7 +7,7 @@
 //
 
 #import "AppCell.h"
-
+#import "UIImageView+webView.h"
 
 @implementation AppCell
 
