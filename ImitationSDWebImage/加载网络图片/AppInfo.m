@@ -31,9 +31,6 @@
     // 获取绝对路径
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"apps" withExtension:@"plist"];
     NSArray *dictArray = [NSArray arrayWithContentsOfURL:url];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"apps" ofType:@"plist"];
-//    //  加载plist
-//    NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
     //  把数组中的字典转模型
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
     for (NSDictionary *dict  in dictArray) {
