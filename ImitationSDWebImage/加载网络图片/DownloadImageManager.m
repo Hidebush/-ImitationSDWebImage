@@ -15,7 +15,7 @@
 /// 操作缓冲池
 @property (nonatomic, strong) NSMutableDictionary *operationcache;
 /// 图片缓冲池
-@property (nonatomic, strong) NSMutableDictionary *imagecache;
+@property (nonatomic, strong) NSCache *imagecache;
 @end
 
 @implementation DownloadImageManager
@@ -39,7 +39,7 @@
     }
     
     if ([self checkImageCacheWithString:string]) {
-        finished(self.imagecache[string]);
+        finished([self.imagecache objectForKey:string]);
         return;
     }
     DownloadOperation *op = [DownloadOperation downloadOperationWithURLString:string finished:^(UIImage *image) {
@@ -56,7 +56,7 @@
 
 /// 检查图片缓存
 - (BOOL)checkImageCacheWithString: (NSString *)urlString {
-    if (self.imagecache[urlString] != nil) {
+    if ([self.imagecache objectForKey:urlString] != nil) {
         NSLog(@"内存缓存...");
         return YES;
     }
@@ -93,9 +93,9 @@
     return _queue;
 }
 
-- (NSMutableDictionary *)imagecache {
+- (NSCache *)imagecache {
     if (_imagecache == nil) {
-        _imagecache = [NSMutableDictionary dictionary];
+        _imagecache = [[NSCache alloc] init];
     }
     return _imagecache;
 }

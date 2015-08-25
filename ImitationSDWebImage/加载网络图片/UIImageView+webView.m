@@ -30,7 +30,7 @@
 const void *URLStringKey = @"URLStringKey";
 
 - (void)setUrlString:(NSString *)urlString {
-    objc_setAssociatedObject(self, URLStringKey, urlString, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, URLStringKey, urlString, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (NSString *)urlString {
